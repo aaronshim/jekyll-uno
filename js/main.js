@@ -39,6 +39,7 @@ $(document).ready(function () {
       
       currentWidth = $('.panel-cover').width()
       if (currentWidth < 960) {
+        $('.panel-cover').addClass('panel-cover--collapsed')
         // Slide in the content stuff if the page is already in a collapsed mode
         var animationName = 'slideInRight'
         var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend'
@@ -49,8 +50,14 @@ $(document).ready(function () {
         // No slide-in of the main content during the initial panel-cover drawing away to the left
         $('.panel-cover').css('max-width', currentWidth)
         $('.panel-cover').animate({'max-width': '530px', 'width': '40%'}, 400, swing = 'swing', function () {})
-        $('.panel-cover').addClass('panel-cover--collapsed') // only add this after the animation is done
+        $('.panel-cover').addClass('panel-cover--collapsed')
       }
+    })
+
+    // For mobile navigation
+    $('.navigation-wrapper .' + buttonClass).click(function () {
+      $('.navigation-wrapper').toggleClass('visible')
+      $('.btn-mobile-menu__icon').toggleClass('icon-list icon-x-circle animated fadeIn')
     })
   }
 
@@ -79,10 +86,4 @@ $(document).ready(function () {
     $('.navigation-wrapper').toggleClass('visible animated bounceInDown')
     $('.btn-mobile-menu__icon').toggleClass('icon-list icon-x-circle animated fadeIn')
   })
-
-  $('.navigation-wrapper .blog-button').click(function () {
-    $('.navigation-wrapper').toggleClass('visible')
-    $('.btn-mobile-menu__icon').toggleClass('icon-list icon-x-circle animated fadeIn')
-  })
-
 })
