@@ -1,6 +1,17 @@
 ---
 layout: default
 robots: noindex
+projects:
+  - title: Project Title
+    image: /images/mountains.jpg
+    icons: [git]
+    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    link: //www.google.com
+  - title: Project Title
+    image: /images/skate.jpg
+    icons: [git, ruby, rails]
+    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    link: //www.google.com
 ---
 
 <div class="main-post-list">
@@ -30,9 +41,9 @@ robots: noindex
 </div>
 
 <div class="about">
-  About me!
+  {% include about.html %}
 </div>
 
 <div class="projects">
-  About my projects!
+  {% include projects.html %}
 </div>

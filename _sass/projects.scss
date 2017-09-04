@@ -1,0 +1,26 @@
+.project-row {
+    margin: 3.5rem 0rem;
+
+    h3 {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+}
+
+.project-image {
+    max-width: 100%;
+}
+
+.project-icons-row {
+    margin: 1rem 0rem;
+    display: flex;
+
+    .project-icon {
+        min-width: 3rem;
+        margin: 0rem 0.5rem;
+
+        filter: gray; /* IE6-9 */
+        -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+        filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+    }
+}
