@@ -52,6 +52,16 @@ $(document).ready(function () {
         $('.panel-cover').animate({'max-width': '530px', 'width': '40%'}, 400, swing = 'swing', function () {})
         $('.panel-cover').addClass('panel-cover--collapsed')
       }
+
+      // Only resize the particles canvas after we are done with collapsing the navbar
+      $(":animated").promise().done(function() {
+        var particleCanvas = $('#particles-js>canvas')[0]
+        console.log("Foo!")
+        console.log(particleCanvas)
+        particleCanvas.removeAttribute("style")
+        particleCanvas.width = $('header').width()
+        particleCanvas.height = $('header').height()
+      })
     })
 
     // For mobile navigation
